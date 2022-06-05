@@ -1,8 +1,9 @@
 <div>
     {{#each items}}
-<h2>name: {{ name }}</h2>
-{{#each images}}
-<p>image: <img src="{{url}}" alt="{{name}}"></p>
-{{/each}}
-{{/each}}
+        <h2>name: {{ name }}</h2>
+            {{#each images}}
+                <p>image: <img src="{{url}}" alt="{{name}}"></p>
+            {{/each}}
+        <a href="/albums/{{id}}">View Artist Albums</a>
+    {{/each}}
 </div>
