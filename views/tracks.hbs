@@ -1,19 +1,25 @@
+<li><a href="/">Home</a></li>
 <div>
     <h1>Title:</h1>
+
         {{#each items}}
+        <div>
+    <script>
+        function play() {
+        const audio = document.getElementById("{{id}}");
+        audio.play();
+        }
+        function pause() {
+        const audio = document.getElementById("{{id}}");
+        return audio.pause();
+        }
+
+       </script>     
+            <audio id="{{id}}" src="{{preview_url}}"></audio>
             <p>{{name}}</p>
-            <script>
-                function play() {
-                const audio = document.getElementById("audio");
-                audio.play();
-                }
-                function pause() {
-                const audio = document.getElementById("audio");
-                audio.pause();
-                }
-            </script>
             <input type="button" value="PLAY" onclick="play()">
             <input type="button" value="PAUSE" onclick="pause()">
-            <audio id="audio" src="{{preview_url}}"></audio>
+
+</div>
         {{/each}}
 </div>
