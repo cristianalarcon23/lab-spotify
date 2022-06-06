@@ -1,20 +1,16 @@
-<a href="/">Home</a>
-<h2>Titles:</h2>
-<ul>
-    {{#each items}}
-    <li>
-        <h3>{{name}}</h3>
-        {{#if preview_url}}
+<div class="song-list">
+    <header>
+        <p>Title</p>
+        <p>Listen</p>
+    </header>
+    <ul>
+        {{#each items}}
+        <li>
+            <p>{{name}}</p>
             <figure>
-                <figcaption>Play a preview!</figcaption>
-                <audio controls src="{{preview_url}}">
-                    Your browser does not support the
-                    <code>audio</code> element.
-                </audio>
+                <audio controls src={{preview_url}}>Your browser does not support<code>audio</code>elements</audio>
             </figure>
-        {{else}}
-            <p>No audio track available, sorry</p>
-        {{/if}}
-    </li>
-    {{/each}}
-</ul>
+        </li>
+        {{/each}}
+    </ul>
+</div>

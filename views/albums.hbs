@@ -1,9 +1,9 @@
-<a href="/">Home</a>
-    <h1>Artist albums:</h1>
+<div class="results">
     {{#each items}}
-        <h2>name: {{ name }}</h2>
-
-            <img src="{{images.1.url}}" alt="{{name}}">
-
-        <a href="/tracks/{{id}}">View Tracks</a>
+    <div >
+        <p><img id="album-image" src="{{images.1.url}}" onerror="this.onerror.null; src='https://videos.toromedia.com/client/assets/images/default-avatar-video-channel.png'" alt="{{name}}" ></p>
+        <h4>{{name}}</h4>
+        <a href="/tracks/{{id}}">View Tracks</a>  
+    </div>
     {{/each}}
+</div>
