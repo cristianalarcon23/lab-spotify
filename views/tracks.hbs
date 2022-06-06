@@ -7,9 +7,17 @@
         {{#each items}}
         <li>
             <p>{{name}}</p>
+{{#if preview_url}}
             <figure>
-                <audio controls src={{preview_url}}>Your browser does not support<code>audio</code>elements</audio>
+                <figcaption>Play a preview!</figcaption>
+                <audio controls src="{{preview_url}}">
+                    Your browser does not support the
+                    <code>audio</code> element.
+                </audio>
             </figure>
+        {{else}}
+            <p>No audio track available, sorry</p>
+        {{/if}}
         </li>
         {{/each}}
     </ul>
