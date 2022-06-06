@@ -2,8 +2,8 @@
     <h1>Artist albums:</h1>
     {{#each items}}
         <h2>name: {{ name }}</h2>
-        {{#each images}}
-            <p>image: <img src="{{url}}" alt="{{name}}"></p>
-        {{/each}}
+
+            <img src="{{images.1.url}}" alt="{{name}}">
+
         <a href="/tracks/{{id}}">View Tracks</a>
     {{/each}}
