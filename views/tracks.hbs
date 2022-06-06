@@ -1,25 +1,19 @@
 <li><a href="/">Home</a></li>
-<div>
-    <h1>Title:</h1>
-
-        {{#each items}}
-        <div>
-    <script>
-        function play() {
-        const audio = document.getElementById("{{id}}");
-        audio.play();
-        }
-        function pause() {
-        const audio = document.getElementById("{{id}}");
-        return audio.pause();
-        }
-
-       </script>     
-            <audio id="{{id}}" src="{{preview_url}}"></audio>
-            <p>{{name}}</p>
-            <input type="button" value="PLAY" onclick="play()">
-            <input type="button" value="PAUSE" onclick="pause()">
-
-</div>
-        {{/each}}
-</div>
+<ul>
+    {{#each items}}
+    <li>
+        <h3>{{name}}</h3>
+        {{#if preview_url}}
+            <figure>
+                <figcaption>Play a preview!</figcaption>
+                <audio controls src="{{preview_url}}">
+                    Your browser does not support the
+                    <code>audio</code> element.
+                </audio>
+            </figure>
+        {{else}}
+            <p>No audio track available, sorry</p>
+        {{/if}}
+    </li>
+    {{/each}}
+</ul>
